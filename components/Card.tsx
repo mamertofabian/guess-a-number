@@ -3,7 +3,7 @@ import { StyleSheet, View } from "react-native";
 
 interface CardProps {
   children: React.ReactNode;
-  style: {};
+  style?: {};
 }
 
 const Card = ({ children, style }: CardProps) => {

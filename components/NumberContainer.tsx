@@ -4,7 +4,7 @@ import colors from "../constants/colors";
 
 interface NumberContainerProps {
   children: React.ReactNode;
-  style: {};
+  style?: {};
 }
 const NumberContainer = ({ children }: NumberContainerProps) => {
   return (
