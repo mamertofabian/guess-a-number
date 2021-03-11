@@ -1,7 +1,8 @@
 import React from "react";
-import { Button, Image, StyleSheet, View } from "react-native";
+import { Button, Image, StyleSheet, Text, View } from "react-native";
 import BodyText from "../components/BodyText";
 import TitleText from "../components/TitleText";
+import colors from "../constants/colors";
 
 interface GameOverScreenProps {
   numberOfRounds: number;
@@ -20,16 +21,21 @@ const GameOverScreen = ({
       <View style={styles.imageContainer}>
         <Image
           style={styles.image}
-          // source={require("../assets/success.png")}
-          source={{
-            uri:
-              "https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=pexels-pixabay-417173.jpg&fm=jpg",
-          }}
+          source={require("../assets/success.png")}
+          // source={{
+          //   uri:
+          //     "https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=pexels-pixabay-417173.jpg&fm=jpg",
+          // }}
           resizeMethod="resize"
         />
       </View>
-      <BodyText>Number of rounds: {numberOfRounds}</BodyText>
-      <BodyText>Number was: {userNumber}</BodyText>
+      <View style={styles.resultContainer}>
+        <BodyText style={styles.result}>
+          Your phone needed{" "}
+          <Text style={styles.highlight}>{numberOfRounds}</Text> rounds to guess
+          the number <Text style={styles.highlight}>{userNumber}</Text>
+        </BodyText>
+      </View>
       <Button title="Play Again" onPress={onRestartGame} />
     </View>
   );
@@ -53,6 +59,18 @@ const styles = StyleSheet.create({
   image: {
     width: "100%",
     height: "100%",
+  },
+  resultContainer: {
+    marginHorizontal: 30,
+    marginBottom: 20,
+  },
+  highlight: {
+    color: colors.primary,
+    fontFamily: "open-sans-bold",
+  },
+  result: {
+    textAlign: "center",
+    fontSize: 20,
   },
 });
 
