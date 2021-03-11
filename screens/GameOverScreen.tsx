@@ -20,7 +20,11 @@ const GameOverScreen = ({
       <View style={styles.imageContainer}>
         <Image
           style={styles.image}
-          source={require("../assets/success.png")}
+          // source={require("../assets/success.png")}
+          source={{
+            uri:
+              "https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?cs=srgb&dl=pexels-pixabay-417173.jpg&fm=jpg",
+          }}
           resizeMethod="resize"
         />
       </View>
